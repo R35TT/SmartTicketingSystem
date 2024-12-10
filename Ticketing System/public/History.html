@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    <script src="JavaScript/history.js"></script>
+    <script src="JavaScript/logout.js" defer></script>
+  </head>
+  <body>
+    <header class="primary-header flex">
+      <div>
+        <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        onclick="navBarClick()"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      ></button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a class="links" href="Home.html"
+              ><span aria-hidden="true">00</span>Available Spot</a
+            >
+          </li>
+          <li>
+            <a class="links" href="ParkingSession.html"
+              ><span aria-hidden="true">01</span>Parking Session</a
+            >
+          </li>
+          <li class="active">
+            <a class="links" href="History.html"
+              ><span aria-hidden="true">03</span>History</a
+            >
+          </li>
+          <li>
+            <a class="links" href="settings.html"
+              ><span aria-hidden="true">04</span>Settings</a
+            >
+          </li>
+          <li>
+            <a class="links" href="javascript:void(0)" onclick="logout()"
+              ><span aria-hidden="true">05</span>Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h1 style="margin-bottom: 0.5rem; margin-top: 0; text-align: center">
+        Parking History
+      </h1>
+      <div id="history"></div>
+      <div
+        id="receipt"
+        style="
+          display: none;
+          border: 1px solid #ccc;
+          padding: 1rem;
+          margin-top: 1rem;
+        "
+      >
+        <!-- Ticket details will be dynamically injected here -->
+      </div>
+    </div>
+
+    <div class="footer"></div>
+  </body>
+</html>

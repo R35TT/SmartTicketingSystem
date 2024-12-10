@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <script src="JavaScript/adminLogin.js" defer></script>
+  </head>
+  <body>
+    <div class="contents">
+      <div class="container">
+        <div class="con" style="justify-content: center; margin-top: 3rem">
+          <img id="loginLogo" src="UI/loginLogo.svg" alt="Logo" />
+        </div>
+        <div style="align-items: center; text-align: center; color: #0a0637">
+          <h4 style="margin: 0px; font-size: clamp(0.2em, 0.5vw + 1rem, 2rem)">
+            Admin
+          </h4>
+          <h1 style="margin: 0px; font-size: clamp(0.3rem, 3vw + 1rem, 3rem)">
+            Smart Ticketing
+          </h1>
+        </div>
+        <div class="wrapper">
+          <form id="admin_login_form">
+            <div class="admin_input-box">
+              <input
+                type="text"
+                id="username"
+                required
+                placeholder=" Enter Username"
+              />
+              <div>
+                <input
+                  type="password"
+                  id="password"
+                  required
+                  placeholder=" Enter Password"
+                />
+              </div>
+            </div>
+            <div class="" style="margin-top: 1.5rem; margin-bottom: 1rem">
+              <button
+                type="button"
+                class="btn"
+                id="loginBtn"
+                onclick="loginRequest()"
+                style="width: 100%"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

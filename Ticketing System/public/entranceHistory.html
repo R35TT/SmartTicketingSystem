@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <link rel="stylesheet" href="Style/admin.css" />
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="JavaScript/nav.js" defer></script>  
+    <script src="JavaScript/historyEntrance.js" defer></script>
+    
+  </head>
+  <body>
+    <header class="primary-header flex">
+        <div>
+          <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+        </div>
+        <button
+          class="mobile-nav-toggle"
+          onclick="navBarClick()"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        ></button>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          > 
+            <li class="active">
+              <a class="links" href="adminHome.html"
+                ><span aria-hidden="true"></span>Entrance</a
+              >
+            </li>
+            </li>
+            <li>
+              <a class="links" href="station2.html"
+                ><span aria-hidden="true"></span>Payment</a
+              >
+            </li>
+            <li>
+              <a class="links" href="station3.html"
+                ><span aria-hidden="true"></span>Exit</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminSettings.html"
+                ><span aria-hidden="true"></span>Settings</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminLogin.html"
+                ><span aria-hidden="true"></span>Log Out</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">  
+        <div class="float-child" style=" margin-left: 2rem; margin-right: 1rem;"> 
+          <div id="title"> 
+            <h3>Station 1</h3> 
+            <h1>Entrance History</h1> 
+          </div>
+        </div>  
+        <div class="" style="text-align: center; background-color: whitesmoke; height: 3.5rem; vertical-align: middle; line-height: 3.5rem;">    
+          <h3 style="font-size: 1.5rem;">Parking Customer Information</h3>
+        </div> 
+        <div style="margin-left: 1rem; margin-right: 1rem;">
+          <div id="filterOptions" style="margin-top: 1rem;">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" />
+          
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" />
+          
+            <label for="sortOrder">Sort Order:</label>
+            <select id="sortOrder">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          
+            <button id="applyFilter">Apply Filter</button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ticket ID</th> 
+                <th>Time-in</th>
+                <th>Entrance Status</th>  
+                <th>Operation</th>
+              </tr>
+            </thead>
+            <tbody id="entranceTableBody"> 
+            </tbody>
+          </table>
+        </div>
+      </div> 
+  </body>
+</html>  

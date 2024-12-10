@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    <script src="JavaScript/logout.js" defer></script>
+  </head>
+  <body class="home">
+    <header class="primary-header flex">
+      <div>
+        <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        onclick="navBarClick()"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      ></button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a class="links" href="Home.html"
+              ><span aria-hidden="true">00</span>Available Spot</a
+            >
+          </li>
+          <li>
+            <a class="links" href="ParkingSession.html"
+              ><span aria-hidden="true">01</span>Parking Session</a
+            >
+          </li>
+          <li>
+            <a class="links" href="History.html"
+              ><span aria-hidden="true">03</span>History</a
+            >
+          </li>
+          <li>
+            <a class="links" href="settings.html "
+              ><span aria-hidden="true">04</span>Settings</a
+            >
+          </li>
+          <li>
+            <a class="links" href="javascript:void(0)" onclick="logout()"
+              ><span aria-hidden="true">05</span>Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="container">
+        <div id="title">
+          <h3>Welcome to</h3>
+          <h1>Smart Ticketing!</h1>
+        </div>
+        <div class="container" id="slots">
+          <div class="top-container">Available Parking Slots</div>
+          <div class="con">
+            <div class="container-left">
+              <p>Select Floor Level</p>
+              <select name="floorLvl" id="floorLvl">
+                
+              </select>
+            </div> 
+            <div class="container-right">
+              <p>Select Parking Type</p> 
+              <select name="vehicleType" id="vehicleType">
+                
+              </select> 
+            </div>
+          </div>
+        </div>
+        <div class="con" id="mid-content">
+          <div class="container-left" id="left">
+            <h3><span style="color: rgb(70, 204, 70)">Available</span></h3>
+            <h1 id="availableSlot">...</h1>
+          </div>
+        </div>
+        <div id="end-content">
+          <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; margin-top: 0">
+            Generate QR for Parking Ticket
+          </h4>
+          <div class="genBtn">
+            <button class="btn" id="generateBtn">Generate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+    <script src="JavaScript/main.js"></script>
+  </body>
+</html>

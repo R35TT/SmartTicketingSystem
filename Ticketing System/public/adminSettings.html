@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <link rel="stylesheet" href="Style/admin.css" />
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    
+  </head>
+  <body>
+    <header class="primary-header flex">
+        <div>
+          <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+        </div>
+        <button
+          class="mobile-nav-toggle"
+          onclick="navBarClick()"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        ></button>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          > 
+            <li class="active">
+              <a class="links" href="adminHome.html"
+                ><span aria-hidden="true"></span>Entrance</a
+              >
+            </li>
+            </li>
+            <li>
+              <a class="links" href="station2.html"
+                ><span aria-hidden="true"></span>Payment</a
+              >
+            </li>
+            <li>
+              <a class="links" href="station3.html"
+                ><span aria-hidden="true"></span>Exit</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminSettings.html"
+                ><span aria-hidden="true"></span>Settings</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminLogin.html"
+                ><span aria-hidden="true"></span>Log Out</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">  
+        <div class="float-child" style=" margin-left: 2rem; margin-right: 1rem;"> 
+          <div id="title"> 
+            <h1>Settings</h1>   
+          </div> 
+        </div>
+        <div>  
+          <div class="holder"> 
+            <h3><a href="parkingConfiguration.html">Park Configuration</a></h3>   
+          </div>
+        </div>  
+      </div> 
+  </body>
+</html>  

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <link rel="stylesheet" href="Style/parkingSession.css" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    <script src="JavaScript/parkingSession.js" defer></script>
+    <script src="JavaScript/logout.js" defer></script>
+  </head>
+  <body>
+    <header class="primary-header flex">
+      <div>
+        <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        onclick="navBarClick()"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      ></button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <li>
+            <a class="links" href="Home.html"
+              ><span aria-hidden="true">00</span>Available Spot</a
+            >
+          </li>
+          <li class="active">
+            <a class="links" href="ParkingSession.html"
+              ><span aria-hidden="true">01</span>Parking Session</a
+            >
+          </li>
+          <li>
+            <a class="links" href="History.html"
+              ><span aria-hidden="true">03</span>History</a
+            >
+          </li>
+          <li>
+            <a class="links" href="settings.html"
+              ><span aria-hidden="true">04</span>Settings</a
+            >
+          </li>
+          <li>
+            <a class="links" href="javascript:void(0)" onclick="logout()"
+              ><span aria-hidden="true">05</span>Log Out</a
+            >
+          </li> 
+        </ul>
+      </nav>
+    </header>
+    <div id="loadingOverlay">
+      <div class="loader"></div>
+    </div>
+    <div>
+      <div class="container">
+        <div class="session">
+          <h1 style="margin-bottom: 0.5rem; margin-top: 0">Parking Session</h1>
+        </div>
+        <div class="session">
+          <h1 style="margin: 0">PHP</h1>
+          <h1 id="price" style="margin: 0">00</h1>
+        </div>
+        <div class="session">
+          <p style="margin-bottom: 0.3rem; margin-top: 0.5rem">
+            Parking Time Meter
+          </p>
+          <h1 id="timeInterval" style="margin-bottom: 0.5rem; margin-top: 0">
+            00:00:00
+          </h1>
+        </div>
+        <div class="session">
+          <p style="font-weight: 500">
+            Have your QR Parking Ticket scanned by the parking attendant again
+            before going to your vehicle
+          </p>
+        </div>
+      </div>
+      <div class="container" id="qrDiv">
+        <div id="timeDateDiv">
+          <button class="btn" id="deleteSessionBtn" style="display: none;">Delete Parking Session</button>
+          <p>Arrival</p>
+          <p id="parkDate" style="font-weight: bold">waiting</p>
+          <p id="parkTime" style="font-weight: bold">waiting</p>
+        </div>
+        <div id="qrSlot">
+          <img
+            id="generatedQR"
+            src="UI/Smart Ticketing Logo (without White).png"
+            alt="QR Code"
+          />
+        </div>
+        <div class="con" style="font-size: 1rem; height: fit-content">
+          <div class="container-left" style="height: 70px">
+            <h4 style="margin-bottom: 0.5rem; margin-top: 0.5rem">
+              Parking Type
+            </h4>
+            <h5
+              id="vehicleType"
+              style="
+                font-weight: 700;
+                margin-top: 0;
+                padding-top: 0;
+                margin-bottom: 0;
+              "
+            >
+              Parking Type
+            </h5>
+          </div>
+          <div class="container-right" style="height: 70px">
+            <h4 style="margin-bottom: 0.5rem; margin-top: 0.5rem">
+              Floor Number
+            </h4>
+            <h5
+              id="flrNum"
+              style="
+                font-weight: 700;
+                margin-top: 0;
+                padding-top: 0;
+                margin-bottom: 0;
+              "
+            >
+              Floor Number
+            </h5> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

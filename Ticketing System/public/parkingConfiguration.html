@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <link rel="stylesheet" href="Style/admin.css" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    <script src="JavaScript/parkConfig.js" defer></script>
+    
+  </head>
+  <body>
+    <header class="primary-header flex">
+        <div>
+          <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+        </div>
+        <button
+          class="mobile-nav-toggle"
+          onclick="navBarClick()"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        ></button>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          > 
+            <li class="active">
+              <a class="links" href="adminHome.html"
+                ><span aria-hidden="true"></span>Entrance</a
+              >
+            </li>
+            </li>
+            <li>
+              <a class="links" href="station2.html"
+                ><span aria-hidden="true"></span>Payment</a
+              >
+            </li>
+            <li>
+              <a class="links" href="station3.html"
+                ><span aria-hidden="true"></span>Exit</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminSettings.html"
+                ><span aria-hidden="true"></span>Settings</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminLogin.html"
+                ><span aria-hidden="true"></span>Log Out</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <form id="parkingForm">
+          <label>
+            Floor Number:
+            <input type="text" id="floorNumber" placeholder="e.g., Floor 1" required />
+          </label>
+          <label>
+            Parking Type:
+            <select id="vehicleType" required>
+              <option value="Car">Car</option>
+              <option value="Motorcycle">Motorcycle</option>
+              <option value="PWD">PWD</option> 
+              <option value="Senior">Senior</option>
+            </select>
+          </label>
+          <label>
+            Number of Slots:
+            <input type="number" id="slotCount" min="0" required />
+          </label>
+          <button type="submit">Add/Update</button>
+        </form>
+      
+        <!-- Delete Parking Spot -->
+        <form id="deleteForm">
+          <label> 
+            Floor Number:
+            <input type="text" id="deleteFloor" placeholder="e.g., Floor 1" required />
+          </label>
+          <button type="submit">Delete Floor</button>
+        </form>
+      
+        <!-- Parking Slots Table -->
+        <h2>Parking Slots</h2>
+        <table id="parkingTable">
+          <thead>
+            <tr> 
+              <th>Floor</th>
+              <th>Car</th>
+              <th>Motorcycle</th>
+              <th>PWD</th>
+              <th>Senior</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+  </body> 
+</html>  

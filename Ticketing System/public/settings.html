@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <script src="JavaScript/nav.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="JavaScript/logout.js" defer></script>
+  </head>
+  <body>
+    <header class="primary-header flex">
+      <div>
+        <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        onclick="navBarClick()"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      ></button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <li>
+            <a class="links" href="Home.html"
+              ><span aria-hidden="true">00</span>Available Spot</a
+            >
+          </li>
+          <li>
+            <a class="links" href="ParkingSession.html"
+              ><span aria-hidden="true">01</span>Parking Session</a
+            >
+          </li>
+          <li>
+            <a class="links" href="History.html"
+              ><span aria-hidden="true">03</span>History</a
+            >
+          </li>
+          <li>
+            <a class="links" href="settings.html"
+              ><span aria-hidden="true">04</span>Settings</a
+            >
+          </li>
+          <li class="active">
+            <a class="links" href="javascript:void(0)" onclick="logout()"
+              ><span aria-hidden="true">05</span>Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+        <div class="container" style="flex: 1; padding: 20px; background: #ffffff; height:100vh;">
+            <div class="settings-container"> 
+                <h1>Settings</h1> 
+                <div class="settings-buttons">
+                    <button class="settings-btn" onclick="openPDF('UI/PrivacyPolicy-SmartTicketingSystem.pdf')">Terms and Conditions</button>
+                    <button class="settings-btn" onclick="openPDF('UI/TermsAndCond-SmartTicketingSystem.pdf')">Privacy Policy</button>
+                </div>
+            </div>
+        </div>  
+        <script>
+            function openPDF(file) {
+              window.open(file, '_blank'); // Opens the PDF in a new tab
+            }
+          </script>
+  </body>
+</html>

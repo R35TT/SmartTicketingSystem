@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+  </head>
+  <body> 
+    <div class="contents">   
+      <div class="container">
+        <div class="con" style="justify-content: center; margin-top: 3rem;">
+          <img id="loginLogo" src="UI/loginLogo.svg" alt="Logo" />
+        </div>
+        <div style="align-items: center; text-align: center; color: #0a0637">
+          <h4 style="margin: 0px; font-size: clamp(0.2em, 0.5vw + 1rem, 2rem)">
+            Welcome to
+          </h4>
+          <h1 style="margin: 0px; font-size: clamp(0.3rem, 3vw + 1rem, 3rem)">
+            Smart Ticketing
+          </h1>
+        </div>
+        <div 
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          "
+        >
+          <p
+            id="info"
+            style="
+              color: #0a0637;
+              font-weight: bold;
+              font-size: clamp(0.1rem, 0.4vw, 1rem, 2rem);
+            "
+          > 
+            Enter mobile number to log-in
+          </p>
+        </div>
+        <!-- style="display: flex; justify-content: center; align-items: center;" -->
+        <div> 
+          <div id="login" style="display: flex; flex-direction: column; align-items: center;">
+            <div id="recaptcha-container"></div> 
+            <input type="text" id="phoneNumber" placeholder="Enter your number"/> 
+            <button class="btn" id="sendOtp">Send OTP</button>
+          </div>
+        
+          <div id="verify" style="display: none; flex-direction: column; align-items: center;">
+            <input type="text" id="otp" placeholder="Enter OTP"/>
+            <button class="btn" id="verifyOtp" style="margin-bottom: 1rem;">Verify OTP</button>
+            <p style="
+            color: #0a0637;
+            font-weight: bold;
+            font-size: clamp(0.1rem, 0.4vw, 1rem, 2rem);
+            margin-top: 12rem;">   
+            Didn't receive OTP?</p>
+            <button class="btn" id="resendOtp">Resend OTP</button>
+          </div>
+        </div>        
+    </div> 
+    <script src="JavaScript/login.js"></script>
+  </body>   
+</html> 
+   

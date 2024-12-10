@@ -1,0 +1,8 @@
+List of Colors:
+
+OCCUPIED word - #FF0000
+AVAILABLE word - #4CAF50
+Navigation Drawer Titles - #1C1B1F
+
+Titles and Background in some pages (DARK BLUE) - #0A0367
+Whites - #FFFFFF

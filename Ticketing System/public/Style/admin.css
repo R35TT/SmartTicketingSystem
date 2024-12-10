@@ -1,0 +1,33 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 12px;
+  text-align: left;
+  border-width: 1rem;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f4f4f4;
+}
+
+tbody {
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: scroll;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: white;
+}

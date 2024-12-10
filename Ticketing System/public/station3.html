@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing System</title>
+    <link rel="stylesheet" href="Style/HomeStyle.css" />
+    <link rel="stylesheet" href="Style/admin.css" />
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="JavaScript/nav.js" defer></script>
+    
+  </head>
+  <body>
+    <header class="primary-header flex">
+        <div>
+          <img class="logo" src="UI/Smart Ticketing Logo (without White).png" />
+        </div>
+        <button
+          class="mobile-nav-toggle"
+          onclick="navBarClick()"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        ></button>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          > 
+            <li>
+              <a class="links" href="adminHome.html"
+                ><span aria-hidden="true"></span>Entrance</a
+              >
+            </li>
+            </li>
+            <li>
+              <a class="links" href="station2.html"
+                ><span aria-hidden="true"></span>Payment</a
+              >
+            </li>
+            <li class="active">
+              <a class="links" href="station3.html"
+                ><span aria-hidden="true"></span>Exit</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminSettings.html"
+                ><span aria-hidden="true"></span>Settings</a
+              >
+            </li>
+            <li>
+              <a class="links" href="adminLogin.html"
+                ><span aria-hidden="true"></span>Log Out</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">  
+        <div style="display: flex; margin-left: 2rem; margin-right: 1.5rem;"> 
+          <div class="float-child" > 
+              <div id="title"> 
+                  <h3>Station 3</h3>   
+                  <h1>Verification</h1>  
+              </div>   
+          </div>
+          <div class="float-child" style="background-color:#0a0637; display: flex; border-radius: 15px;">  
+              <div class="float-child" style="color: white; text-align: center; padding: 30px 0;">  
+                  <p style="margin-bottom: 0.5rem; margin-top: 0rem;">Open Camera</p>     
+                  <h2 style="margin-top: 0rem; margin-bottom: 0rem;">Scan QR</h2>             
+              </div>                  
+
+              <div class="float-child" style=" display:flex; align-items: center; justify-content: center; ">    
+                  <button class="btn" id="paymentBtn" onclick="scanVerify()" style="background-color: white; width: fit-content; height: fit-content;"> 
+                      <svg width="60px" height="60px" viewBox="0 -2 18 18" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#00000" fill-rule="evenodd" d="M565,248.002473 C565,247.448823 565.443717,247 565.999807,247 L569.502301,247 C569.777173,247 570.09954,246.80092 570.221932,246.556135 L570.778068,245.443865 C570.900637,245.198725 571.22788,245 571.491005,245 L576.508995,245 C576.780169,245 577.09954,245.19908 577.221932,245.443865 L577.778068,246.556135 C577.900637,246.801275 578.214844,247 578.497699,247 L582.000193,247 C582.552371,247 583,247.455761 583,248.002473 L583,257.997527 C583,258.551177 582.555054,259 582.006602,259 L565.993398,259 C565.444759,259 565,258.544239 565,257.997527 L565,248.002473 Z M566,248 L570.437394,248 C570.708303,248 571.024681,247.80092 571.14366,247.556135 L571.900024,246 L576.150024,246 L576.851148,247.536133 C576.968077,247.79232 577.287834,248 577.554307,248 L582,248 L582,258 L566,258 L566,248 Z M574,257 C576.209139,257 578,255.209139 578,253 C578,250.790861 576.209139,249 574,249 C571.790861,249 570,250.790861 570,253 C570,255.209139 571.790861,257 574,257 Z M574,256 C575.656854,256 577,254.656854 577,253 C577,251.343146 575.656854,250 574,250 C572.343146,250 571,251.343146 571,253 C571,254.656854 572.343146,256 574,256 Z M580,252 C580.552285,252 581,251.552285 581,251 C581,250.447715 580.552285,250 580,250 C579.447715,250 579,250.447715 579,251 C579,251.552285 579.447715,252 580,252 Z M567,246.5 C567,246.223858 567.214035,246 567.504684,246 L568.495316,246 C568.774045,246 569,246.231934 569,246.5 L569,247 L567,247 L567,246.5 Z" transform="translate(-565 -245)"/>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+      </div>
+        <div class="" style="text-align: center; background-color: whitesmoke; height: 3.5rem; vertical-align: middle; line-height: 3.5rem;">    
+          <h3 style="font-size: 1.5rem;">Parking Customer Information</h3>
+        </div> 
+        <div style="margin-left: 1rem; margin-right: 1rem;">
+          <table class="table"> 
+            <thead>
+              <tr>
+                <th>Ticket ID</th> 
+                <th>Time-in</th> 
+                <th>Time-out</th>
+                <th>Payment Status</th> 
+                <th>Operation</th>
+              </tr> 
+            </thead>
+            <tbody id="verifyTable"> 
+            </tbody>
+          </table>
+        </div> 
+        <div class="container">     
+          <button class="btn" style="width: 10rem;" id="verifyBtn">Verified</button>
+        </div>
+        <div style="margin-left: 1rem;" id="qrScanVerify" style="display: none;">
+          <input type="text" id="barcodeInputVerify" placeholder="Scan barcode here" style="width: 0; height: 0;">
+       </div>  
+      </div> 
+      <script src="JavaScript/scanQRVerify.js" defer></script> 
+  </body>
+</html>  
